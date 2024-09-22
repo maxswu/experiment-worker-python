@@ -3,6 +3,10 @@ from decimal import Decimal
 
 
 class TwseSecurityInfo(BaseModel):
+    """
+    Model for TWSE assets
+    """
+
     exchange: str = Field(..., title='市場別(交易所)')
     code: str = Field(..., title='代號')
     name: str = Field(..., title='名稱')
