@@ -30,7 +30,9 @@ class SlackNotificationService(NotificationService):
 
     @override
     async def send_text_message(self, message: str) -> None:
-        logger.info(f'Sending {message=} to channel: {self._settings.notification_channel_id}')
+        logger.info(
+            f'Sending {message=} to channel: {self._settings.notification_channel_id}'
+        )
 
         try:
             response = await self._client.chat_postMessage(
